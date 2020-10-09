@@ -1,0 +1,113 @@
+:root {
+  --primary-color: #3F51B5;
+  --primary-color-dark: #3949AB;
+  --primary-color-light: #5C6BC0;
+  --secondary-color: #00E5FF;
+  --secondary-color-dark: #00B8D4;
+  --secondary-color-light: #84FFFF;
+  --background-color: #181818;
+  --app-color: #212121;
+  --panel-color: #212121;
+  --dock-color: rgba(255,255,255,0.1);
+  --dock-text: rgba(255,255,255,0.85);
+  --dock-border: rgba(255,255,255,0.2);
+  --app-text: rgba(255,255,255,0.85);
+  --border-color: rgba(255,255,255,0.2);
+}
+
+body {
+  color: var(--app-text);
+  background-color: var(--background-color);
+}
+
+label, input, textarea, code {
+  background-color: transparent;
+}
+
+label {
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+input:focus, textarea:focus, code:focus {
+  color: var(--app-text);
+}
+
+video {
+  display: none;
+  visibility: hidden;
+}
+
+video, canvas {
+  margin: 1rem;
+}
+
+button i.material-icons {
+  line-height: 0.5rem;
+}
+
+.header {
+  margin: 0 auto 2rem auto;
+  h1 {
+    display: block;
+    position: relative;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.main {
+  width: 40rem;
+  margin: 0 auto;
+}
+
+.monitor {
+  background-image: url("../images/CGA-display.png");
+  background-repeat: no-repeat;
+  background-position: 5rem center;
+  height: 24rem;
+  background-size: contain;
+
+  canvas {
+    width: 20rem;
+    display: block;
+    position: relative;
+    margin: auto auto;
+    padding: 5rem 0;
+    image-rendering: crisp-edges;
+  }
+}
+
+.buttonBar {
+  display: block;
+  position: absolute;
+  right: 3.25rem;
+  top: 12rem;
+  width: 5rem;
+
+  &.bottom {
+    position: relative;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: auto;
+    margin: 1rem auto 0 auto;
+  }
+
+  button {
+    height: 2rem;
+    margin: 0 auto;
+
+    &.control {
+      width: 2rem;
+      padding: 0;
+      margin: 0.295rem auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+
+      i {
+        color: var(--secondary-color-light);
+      }
+    }
+  }
+}
