@@ -1,0 +1,77 @@
+/* transition negates filter, remove filter */
+.dock.ios {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+// iPhone X
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px)
+// and (-webkit-device-pixel-ratio : 3)
+and (orientation : portrait) {
+  .main {
+    width: 100%;
+  }
+
+  .monitor {
+    background-position: center;
+
+    canvas {
+      width: 60%;
+      margin: auto 15%;
+      padding: 7.25rem 0;
+    }
+  }
+
+  .buttonBar {
+    right: 0.25rem;
+    top: 12.35rem;
+    width: 5.25rem;
+
+    button {
+      &.control {
+        margin: 0 auto;
+        height: 1.5rem;
+      }
+    }
+  }
+}
+
+@media only screen
+and (device-height: 667px)
+and (orientation : portrait) {
+  :root {
+    font-size: 14px;
+  }
+  .main {
+    width: 100%;
+  }
+}
+
+@media only screen
+and (device-height: 736px)
+and (orientation : portrait) {
+  .main {
+    width: 100%;
+  }
+}
+
+@media only screen
+and (min-device-height: 1100px)
+and (orientation : portrait) {
+  :root {
+    font-size: 24px;
+  }
+  .main {
+    width: 100%;
+  }
+}
+
+@media only screen
+and (min-device-height: 1100px)
+and (orientation : landscape) {
+  .main {
+    width: 100%;
+  }
+}
