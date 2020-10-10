@@ -64,4 +64,3 @@ logs
 .npmrc
 .DS_Store
 public
-package-lock.json
