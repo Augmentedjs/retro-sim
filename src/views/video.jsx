@@ -7,7 +7,7 @@ class Video extends Elements.Component {
 
   render() {
     return (
-      <video id="videoPlayer" playsInline controls={true} muted="muted" width="320" height="200" crossOrigin="anonymous">
+      <video name="videoPlayer" id="videoPlayer" playsInline controls={true} muted="muted" width="320" height="200" crossOrigin="anonymous">
         <source src="/video" type="video/mp4"></source>
       </video>
     );

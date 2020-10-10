@@ -11,7 +11,7 @@ class App extends Elements.Component {
     return (
       <article>
         <Header/>
-        <Main/>
+        <Main name="main" id="main"/>
       </article>
     );
   };

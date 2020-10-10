@@ -11,11 +11,11 @@ class Main extends Elements.Component {
 
   render() {
     return (
-      <section className="main">
+      <section className="main" id={this.props.id} name={this.props.name}>
         <Video />
-        <VideoControls />
-        <Monitor />
-        <MuteControl />
+        <VideoControls name="controls" id="controls"/>
+        <Monitor name="monitor" id="monitor"/>
+        <MuteControl name="mute" id="mute"/>
       </section>
     );
   };

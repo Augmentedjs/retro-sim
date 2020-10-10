@@ -7,7 +7,7 @@ class Header extends Elements.Component {
 
   render() {
     return (
-      <section className="header">
+      <section className="header" id={this.props.id} name={this.props.name}>
         <header>
           <h1>Video Retro Simulator</h1>
         </header>

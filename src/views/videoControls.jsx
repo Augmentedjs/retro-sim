@@ -7,15 +7,22 @@ class VideoControls extends Elements.Component {
     this.processor = new Processor();
     this._themeCounter = 0;
     this._ditherToggle = false;
+
+    this.state = { "play": false };
   };
 
   render() {
     return (
-      <div className="buttonBar">
+      <div className="buttonBar" id={this.props.id} name={this.props.name}>
         <button id="theme" onClick={this.changeTheme} title ="Theme" className="control"><i className="material-icons">color_lens</i></button>
         <button id="dither" onClick={this.changeDither} title="Dither" className="control"><i className="material-icons">gradient</i></button>
         <button id="play" onClick={this.playPause} title="Play / Pause" className="control">
-          <i className="material-icons">pause</i>
+          {
+            (this.state.play !== true) ?
+            <i x className="material-icons">pause</i> :
+            <i y className="material-icons">play_arrow</i>
+          }
+
         </button>
       </div>
     );
@@ -63,20 +70,20 @@ class VideoControls extends Elements.Component {
 
   playPause = (e) => {
     e.preventDefault();
-    const playButton = document.querySelector("button#play > i");
+    // const playButton = document.querySelector("button#play > i");
     // console.log(playButton);
     if (this._video.paused) {
-      if (playButton) {
-        playButton.innerText = "play_arrow";
-      }
-      // this.setState({ "play": true });
+      // if (playButton) {
+      //   playButton.innerText = "play_arrow";
+      // }
       this._video.play();
+      this.setState({ "play": true });
     } else {
       this._video.pause();
-      // this.setState({ "play": false });
-      if (playButton) {
-        playButton.innerText = "pause";
-      }
+      this.setState({ "play": false });
+      // if (playButton) {
+      //   playButton.innerText = "pause";
+      // }
     }
     return this;
   };

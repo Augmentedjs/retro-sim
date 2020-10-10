@@ -8,7 +8,7 @@ class MuteControl extends Elements.Component {
 
   render() {
     return (
-      <div className="buttonBar bottom">
+      <div className="buttonBar bottom" id={this.props.id} name={this.props.name}>
         <button id="mute" onClick={this.mute} title="Mute" className="primary">
           { (this.state.mute === false) ?
             <span><i className="material-icons">volume_mute</i>&nbsp;Mute</span> :

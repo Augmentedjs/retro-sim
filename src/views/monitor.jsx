@@ -7,7 +7,7 @@ class Monitor extends Elements.Component {
 
   render() {
     return (
-      <div className="monitor">
+      <div className="monitor" id={this.props.id} name={this.props.name}>
         <canvas id="canvas" width="320" height="200"></canvas>
       </div>
     );
