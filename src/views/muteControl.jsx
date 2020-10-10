@@ -1,6 +1,6 @@
-import React from "react";
+import { Elements } from "@augmentedjs/elements";
 
-class MuteControl extends React.Component {
+class MuteControl extends Elements.Component {
   constructor(props) {
     super(props);
     this.state = { "mute": false };

@@ -1,14 +1,12 @@
-import React from "react";
+import { Elements } from "@augmentedjs/elements";
 import Processor from "../processor/processor.js";
 
-class VideoControls extends React.Component {
+class VideoControls extends Elements.Component {
   constructor(props) {
     super(props);
     this.processor = new Processor();
     this._themeCounter = 0;
     this._ditherToggle = false;
-
-    this.state = { "play": false };
   };
 
   render() {
@@ -17,11 +15,7 @@ class VideoControls extends React.Component {
         <button id="theme" onClick={this.changeTheme} title ="Theme" className="control"><i className="material-icons">color_lens</i></button>
         <button id="dither" onClick={this.changeDither} title="Dither" className="control"><i className="material-icons">gradient</i></button>
         <button id="play" onClick={this.playPause} title="Play / Pause" className="control">
-          {
-            (this.state.play === true) ?
-              <i className="material-icons">play_arrow</i> :
-              <i className="material-icons">pause</i>
-          }
+          <i className="material-icons">pause</i>
         </button>
       </div>
     );
@@ -69,12 +63,20 @@ class VideoControls extends React.Component {
 
   playPause = (e) => {
     e.preventDefault();
-    if(this._video.paused) {
-      this.setState({ "play": true });
+    const playButton = document.querySelector("button#play > i");
+    // console.log(playButton);
+    if (this._video.paused) {
+      if (playButton) {
+        playButton.innerText = "play_arrow";
+      }
+      // this.setState({ "play": true });
       this._video.play();
     } else {
       this._video.pause();
-      this.setState({ "play": false });
+      // this.setState({ "play": false });
+      if (playButton) {
+        playButton.innerText = "pause";
+      }
     }
     return this;
   };

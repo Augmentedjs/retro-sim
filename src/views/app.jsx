@@ -1,8 +1,8 @@
-import React from "react";
+import { Elements } from "@augmentedjs/elements";
 import Header from "./header.jsx";
 import Main from "./main.jsx";
 
-class App extends React.Component {
+class App extends Elements.Component {
   constructor(props) {
     super(props);
   };

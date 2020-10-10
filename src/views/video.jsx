@@ -1,6 +1,6 @@
-import React from "react";
+import { Elements } from "@augmentedjs/elements";
 
-class Video extends React.Component {
+class Video extends Elements.Component {
   constructor(props) {
     super(props);
   };

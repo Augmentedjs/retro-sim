@@ -1,6 +1,6 @@
-import React from "react";
+import { Elements } from "@augmentedjs/elements";
 
-class Header extends React.Component {
+class Header extends Elements.Component {
   constructor(props) {
     super(props);
   };
