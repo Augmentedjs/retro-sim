@@ -82,7 +82,10 @@ if (cluster.isMaster) {
     const fileSize = stat.size;
     const range = req.headers.range;
 
+    Logger.info("stats", stat);
+
     if (range) {
+      Logger.info("Range", range);
       const parts = range.replace(/bytes=/, "").split("-");
       const start = parseInt(parts[0], 10);
       const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
@@ -99,6 +102,7 @@ if (cluster.isMaster) {
       res.writeHead(206, head);
       file.pipe(res);
     } else {
+      Logger.info("full", fileSize);
       const head = {
         "Content-Length": fileSize,
         "Content-Type": "video/mp4",

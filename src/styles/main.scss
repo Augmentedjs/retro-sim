@@ -41,10 +41,12 @@ video, canvas {
   margin: 1rem;
 }
 
-button i.material-icons {
-  line-height: 0.5rem;
+button {
+  padding: 0 1rem;
+  i.material-icons {
+    line-height: 0.5rem;
+  }
 }
-
 .header {
   margin: 0 auto 2rem auto;
   h1 {
@@ -109,6 +111,23 @@ button i.material-icons {
         color: var(--secondary-color-light);
       }
     }
+  }
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  width: 16rem;
+  height: 10rem;
+  top: 6rem;
+  left: 30%;
+  margin: auto;
+  z-index: 1;
+  h1 {
+    line-height: 4rem;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 5px black;
   }
 }
 
